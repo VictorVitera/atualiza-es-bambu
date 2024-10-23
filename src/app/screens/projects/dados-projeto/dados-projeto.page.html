@@ -1,0 +1,51 @@
+<ToolbarVoltar 
+[title]="'Dados do Projeto'" 
+[defaultHref]="'/dados-cliente'">
+</ToolbarVoltar>
+
+<ion-content class="dados-projeto-container">
+  <div class="container">
+  <InputLink 
+    placeholder="Título do projeto" 
+    [(ngModel)]="projetoData.titulo" 
+    [text]="'Nome do Projeto'" 
+    keyboardType="text"
+      autoCapitalize="none">
+    </InputLink>
+
+  <InputLink 
+    placeholder="Endereço do projeto" 
+    [(ngModel)]="projetoData.enderecoProjeto" 
+    [text]="'Endereço do Projeto'" 
+    keyboardType="text"
+      autoCapitalize="none">
+    </InputLink>
+
+  <InputLink 
+    placeholder="Resid. Comerc. Indust." 
+    [(ngModel)]="projetoData.tipoConstrucao" 
+    [text]="'Tipo de Construção'" 
+    keyboardType="text"
+      autoCapitalize="none">
+    </InputLink>
+
+  <InputLink 
+    placeholder="Em m²" 
+    [(ngModel)]="projetoData.tamanhoConstrucao" 
+    [text]="'Tamanho da Construção (m²)'" 
+    keyboardType="text"
+      autoCapitalize="none">
+    </InputLink>
+
+  <InputLink 
+    placeholder="Orçamento inicial" 
+    [(ngModel)]="projetoData.orcamento" 
+    [text]="'Orçamento Inicial'" 
+    keyboardType="text"
+      autoCapitalize="none">
+    </InputLink>
+
+    <ButtonLink [routerLink]="['/dados-ambiente']" text="Salvar e continuar"></ButtonLink>
+  
+</div>
+</ion-content>

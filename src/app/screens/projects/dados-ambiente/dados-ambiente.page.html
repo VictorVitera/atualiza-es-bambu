@@ -1,0 +1,24 @@
+<ToolbarVoltar 
+[title]="'Dados dos Ambientes'" 
+[defaultHref]="'/dados-projeto'">
+</ToolbarVoltar>
+
+<ion-content>
+  <h2>CU</h2>
+  <h2 class="header">• Tipo da mobília</h2>
+    <ion-col size="12" class="chips-container">
+      <ion-chip *ngFor="let type of furnitureTypes" 
+                [outline]="!isSelected(type)" 
+                (click)="toggleSelection(type)" 
+                [class.selected]="isSelected(type)">
+        <ion-label>{{ type }}</ion-label>
+      </ion-chip>
+    </ion-col>
+  <div class="container">
+
+      
+
+
+  <ButtonLink [routerLink]="['/dados-ambientes-tamanho']" text="Salvar e continuar"></ButtonLink>
+</div>
+</ion-content>
