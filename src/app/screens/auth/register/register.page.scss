@@ -4,7 +4,7 @@
   align-items: center;
   justify-content: center;
   height: 100%;
-  --background: #728056; /* Matches the olive-green background */
+  --background: #728056; 
 }
 
 .container-image {
@@ -25,7 +25,7 @@ ion-item {
   --border-color: white;
   --border-width: 1px;
   margin-bottom: 12px;
-  width: 100%; /* Ensure it takes full width of the container */
+  width: 100%; 
 }
 
 ion-input {
@@ -34,7 +34,7 @@ ion-input {
 }
 
 WhiteButton {
-  --background: #ff6347; /* Tomato color for the button */
+  --background: #ff6347; 
   --color: white;
   margin-top: 30px;
   width: 100%;

@@ -43,31 +43,31 @@ export class RegisterPage implements OnInit {
     this.router.navigate(['/login']);
   }
 
-  // Função para formatar CPF
+
   formatCPF(event: any) {
-    let cpf = event.target.value.replace(/\D/g, ''); // Remove caracteres não numéricos
+    let cpf = event.target.value.replace(/\D/g, ''); 
     console.log('Formatando CPF:', cpf);
 
     if (cpf.length > 11) {
-      cpf = cpf.substring(0, 11); // Limita o CPF a 11 dígitos
+      cpf = cpf.substring(0, 11); 
     }
 
-    // Formatação
+    
     if (cpf.length > 3) cpf = cpf.replace(/^(\d{3})(\d)/, '$1.$2');
     if (cpf.length > 6) cpf = cpf.replace(/^(\d{3})\.(\d{3})(\d)/, '$1.$2.$3');
     if (cpf.length > 9) cpf = cpf.replace(/^(\d{3})\.(\d{3})\.(\d{3})(\d)/, '$1.$2.$3-$4');
 
-    this.cpf = cpf.trim(); // Atualiza o modelo sem espaços em branco
-    event.target.value = this.cpf; // Atualiza o valor no campo de entrada
+    this.cpf = cpf.trim(); 
+    event.target.value = this.cpf; 
     console.log('CPF formatado:', this.cpf);
   }
 
-  // Função para validar CPF
+  
   isValidCPF(cpf: string): boolean {
-    // Remover caracteres não numéricos
+    
     cpf = cpf.replace(/\D/g, '');
 
-    // Verificar se o CPF tem 11 dígitos e não é uma sequência repetida
+    
     if (cpf.length !== 11 || /^(\d)\1{10}$/.test(cpf)) {
       console.log('CPF inválido por comprimento ou sequência repetida');
       return false;
@@ -76,7 +76,7 @@ export class RegisterPage implements OnInit {
     let sum = 0;
     let rest: number;
 
-    // Validação do primeiro dígito verificador
+    
     for (let i = 1; i <= 9; i++) {
       sum += parseInt(cpf.substring(i - 1, i)) * (11 - i);
     }
@@ -89,7 +89,7 @@ export class RegisterPage implements OnInit {
       return false;
     }
 
-    // Validação do segundo dígito verificador
+    
     sum = 0;
     for (let i = 1; i <= 10; i++) {
       sum += parseInt(cpf.substring(i - 1, i)) * (12 - i);
@@ -107,26 +107,26 @@ export class RegisterPage implements OnInit {
     return true;
   }
 
-  // Função para formatar Telefone
+  
   formatPhone(event: any) {
-    let phone = event.target.value.replace(/\D/g, ''); // Remove caracteres não numéricos
+    let phone = event.target.value.replace(/\D/g, ''); 
     console.log('Formatando telefone:', phone);
 
     if (phone.length > 15) {
-      phone = phone.substring(0, 15); // Limita o telefone a 15 caracteres
+      phone = phone.substring(0, 15); 
     }
 
-    // Formatação
+    
     if (phone.length > 0) phone = phone.replace(/^(\d{2})(\d)/, '($1) $2');
     if (phone.length > 6) phone = phone.replace(/(\d{5})(\d)/, '$1-$2');
-    this.phone = phone; // Atualiza o modelo
-    event.target.value = phone; // Atualiza o valor no campo de entrada
+    this.phone = phone; 
+    event.target.value = phone; 
     console.log('Telefone formatado:', this.phone);
   }
 
-  // Função para validar telefone
+  
   isValidPhone(phone: string): boolean {
-    const phonePattern = /^\(\d{2}\) \d{5}-\d{4}$/; // Formato (xx) xxxxx-xxxx
+    const phonePattern = /^\(\d{2}\) \d{5}-\d{4}$/; 
     const isValid = phonePattern.test(phone);
     console.log('Telefone válido:', isValid);
     return isValid;

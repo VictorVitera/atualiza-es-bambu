@@ -7,7 +7,7 @@ import { NavController } from '@ionic/angular';
   styleUrls: ['./register.page.scss'],
 })
 export class RegisterPage {
-  // Declarando as propriedades necessárias
+  
   fullName: string = '';
   phone: string = '';
   company: string = '';
@@ -21,19 +21,19 @@ export class RegisterPage {
   constructor(private navCtrl: NavController) {}
 
   handleRegister() {
-    // Validação de campos obrigatórios
+   
     if (!this.fullName || !this.phone || !this.cpf || !this.cauregistro || !this.email || !this.password || !this.confirmPassword) {
       alert('Por favor, preencha todos os campos obrigatórios.');
       return;
     }
 
-    // Verificar se as senhas coincidem
+    
     if (this.password !== this.confirmPassword) {
       alert('As senhas não coincidem.');
       return;
     }
 
-    // Lógica de registro
+    
     const registerData = {
       fullName: this.fullName,
       phone: this.phone,

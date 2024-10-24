@@ -16,14 +16,14 @@ export class DadosClientePage {
       endereco: '',
       telefone: '',
       email: '',
-      tipoCliente: 'pessoaFisica' // Define o padrão como Pessoa Física
+      tipoCliente: 'pessoaFisica' 
     };
   }
 
   /**
    * Atualiza os dados do cliente no contexto.
-   * @param key A chave do dado a ser atualizado.
-   * @param value O valor a ser atribuído.
+    @param key 
+    @param value .
    */
   setClienteData(key: string, value: any) {
     this.clienteData[key] = value;
